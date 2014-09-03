@@ -1,5 +1,5 @@
 {
-  "name": "crypto",
+  "name": "cryptoaudio",
   "version": "0.0.1",
   "description": "encryption and sound",
   "main": "index.js",
@@ -19,5 +19,12 @@
   "bugs": {
     "url": "https://github.com/allthetime/encrypted-audio/issues"
   },
-  "homepage": "https://github.com/allthetime/encrypted-audio"
+  "homepage": "https://github.com/allthetime/encrypted-audio",
+  "dependencies": {
+    "atob": "^1.1.2",
+    "btoa": "^1.1.2",
+    "express": "^4.8.7",
+    "request": "^2.40.0",
+    "socket.io": "^1.0.6"
+  }
 }
