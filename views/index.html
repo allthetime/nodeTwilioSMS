@@ -2,22 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>cryptoaudio</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" type="text/css" href="/styles/style.css">
 </head>
 <body>
 
+    
+    <header>
+        <h1>SEND A MESSAGE TO CHRIS's CELLPHONE</h1>
+        <h2>Chris' reply and other messages sent to <span>778-402-1114</span> will also appear on this page</h2>
+    </header>
+
+
+    <input type="text"></input>
+    <input type="submit"></input>
+ 
+
+    <ul>
+
+    </ul>
+
     <script src="/socket.io/socket.io.js"></script>
     <script>
 
+
     var socket = io();
 
-    socket.on('data', function(data){
-        console.log(data);
+    var submit = document.querySelector('input[type=submit]')
+    var text = document.querySelector('input[type=text]')
+
+    submit.addEventListener('click',function(e){
+            socket.emit('msg', text.value, function(){
+                console.log('sent')
+            })
+            text.value = ""
+    },false)
+
+    text.addEventListener('keydown',function(e){
+        if(e.keyCode == 13){
+            socket.emit('msg', text.value, function(){
+                console.log('sent')
+            })
+            text.value = ""
+        }
+    })
+
+
+    var ul = document.querySelector('ul')
+
+    socket.on('load_msgs', function(data){
+            //console.log(data)
+
+            //for(var index in data) { document.write('<div>'+data[index][body]+'</div>') }
+
+            ul.innerHTML = ""
+
+            data.forEach(function(message){
+            li = document.createElement("li");
+             li.innerHTML = message.body
+            //     switch(message.from){
+            //         case "+17784021114":
+            //             "<b>here</b>"
+            //         case "+12505080533":
+            //             "<b>CHRIS</b>"
+            //         default:
+            //             message.from
+            //     } +
+            //     ": " + message.body; 
+            ul.appendChild(li);
+            });
+
+    
     });
 
+    socket.on('likes', function(likes){ console.log(likes)} );
 
     </script>
+
+
 
 </body>
 </html>

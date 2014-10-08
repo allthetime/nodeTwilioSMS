@@ -1,0 +1,54 @@
+input[type="text"]{
+
+	width:60%;
+	font-size:20px;
+	height:40px;
+	border:5px solid red;
+		box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+  text-align:center;
+  margin-bottom: 30px;
+
+}
+
+h2 span{
+
+	color:red;
+}
+
+input[type="submit"]{
+	border:5px solid red;
+	height:40px;
+	width:60px;
+	background:white;
+	vertical-align: top;
+}
+
+body,html{
+	width:100%;
+	margin:0;
+	border:10px solid black;
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	text-align: center;
+}
+
+ul{
+	width:100%;
+	list-style-type: none;
+	margin:0;
+	padding:0;
+	text-align: left;
+		box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
+
+li{
+
+	width:100%;
+	background:#eee;
+	border:1px solid #ccc;
+	padding:10px;
+			box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+}
