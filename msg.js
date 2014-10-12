@@ -1,4 +1,7 @@
-var client = require('twilio')('ACd635c78e9505a2e39ecaff041997f1c8', 'a7dcb2dffcc28fcf524e73e7f7e08aeb')
+var auth = require('./auth');
+
+
+var client = require('twilio')(auth.public,auth.private);
 
 exports.send = function send_message(msg){
     client.sendMessage({

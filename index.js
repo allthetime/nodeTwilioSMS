@@ -50,22 +50,22 @@ http.listen(port, function(){
 var url = "https://graph.facebook.com/?ids=303188229719999";
 
 
-var timer = setInterval(function(){
-  request({ url: url, json: true }, function (error, response, body) {
-    if (!error && response.statusCode === 200) {
-        console.log(body['303188229719999'].likes);
-
-    
-             io.emit('likes',body['303188229719999'].likes)
-    
-
-        if(body['303188229719999'].likes == 249){
-          msg.send("GO GO GO GO GO")
-          clearInterval(timer)
-        }
-    };
-  });
- },10000);
+//var timer = setInterval(function(){
+//  request({ url: url, json: true }, function (error, response, body) {
+//    if (!error && response.statusCode === 200) {
+//        console.log(body['303188229719999'].likes);
+//
+//    
+ //            io.emit('likes',body['303188229719999'].likes)
+ //   
+//
+ //       if(body['303188229719999'].likes == 249){
+ //         msg.send("GO GO GO GO GO")
+ //         clearInterval(timer)
+//        }
+//    };
+//  });
+// },10000);
 
 
 
