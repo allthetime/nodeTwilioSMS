@@ -59,26 +59,24 @@
 
             data.forEach(function(message){
 
-console.log(message);
 		if (message.sid == "SMa630ebf44731cb0a89bd99221db82398" || message.sid == "SMc9d1da28b6f04ab8acce8cc87ea61877" || message.sid == "SM379a60a15a0e1f5fcdf9200f59a2c3d0"){
-			console.log(message.body);
+			console.log('!');
 		} else {
 
 
             li = document.createElement("li");
-             li.innerHTML = message.body
-            //     switch(message.from){
-            //         case "+17784021114":
-            //             "<b>here</b>"
-            //         case "+12505080533":
-            //             "<b>CHRIS</b>"
-            //         default:
-            //             message.from
-            //     } +
-            //     ": " + message.body; 
-            ul.appendChild(li);
+ 
+		if (message.from == "+17786550666"){
+			li.innerHTML = "<b>YOU: </b>" + message.body
+		} else if (message.from == "+12505080533"){
+			li.innerHTML = "<b>CHRIS: </b>" + message.body
+		} else {
+			li.innerHTML = "<b>?: </b>" + message.body
+		}
+           	
+		ul.appendChild(li);
 
-}
+		}
             });
 			
     
