@@ -47,7 +47,7 @@ http.listen(port, function(){
     console.log('ON/'+port);
 });
 
-var url = "https://graph.facebook.com/?ids=303188229719999";
+//var url = "https://graph.facebook.com/?ids=303188229719999";
 
 
 //var timer = setInterval(function(){

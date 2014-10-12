@@ -10,7 +10,7 @@
     
     <header>
         <h1>SEND A MESSAGE TO CHRIS's CELLPHONE</h1>
-        <h2>Chris' reply and other messages sent to <span>778-402-1114</span> will also appear on this page</h2>
+        <h2>Chris' reply and other messages sent to <span>778-655-0666</span> will also appear on this page</h2>
     </header>
 
 
@@ -58,6 +58,13 @@
             ul.innerHTML = ""
 
             data.forEach(function(message){
+
+console.log(message);
+		if (message.sid == "SMa630ebf44731cb0a89bd99221db82398" || message.sid == "SMc9d1da28b6f04ab8acce8cc87ea61877" || message.sid == "SM379a60a15a0e1f5fcdf9200f59a2c3d0"){
+			console.log(message.body);
+		} else {
+
+
             li = document.createElement("li");
              li.innerHTML = message.body
             //     switch(message.from){
@@ -70,8 +77,10 @@
             //     } +
             //     ": " + message.body; 
             ul.appendChild(li);
-            });
 
+}
+            });
+			
     
     });
 
