@@ -7,10 +7,16 @@ var express = require('express'),
     port = 3333,
     msg = require('./msg');
 
-// Serves HTML
+//Serves HTML
+//app.get('/nodesms', function(req,res){
+// res.sendFile(path.join(__dirname, '/views', 'index.html'));
+//});
+
 app.get('/', function(req,res){
  res.sendFile(path.join(__dirname, '/views', 'index.html'));
 });
+
+
 // Access to local filesysytem for views
 app.use('/styles', express.static(path.join(__dirname, '/views/styles')));
 // i/o
