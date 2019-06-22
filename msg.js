@@ -5,7 +5,7 @@ var client = require('twilio')(auth.public,auth.private);
 
 exports.send = function send_message(msg){
     client.sendMessage({
-    to:'+12505080533', // the number for the phone in your pocket
+    to:'+16665086666', // the number for the phone in your pocket
     from:'+17786550666', // your Twilio number
     body: msg // The body of the text message
     }, function(error, message) {
